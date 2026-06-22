@@ -3,13 +3,14 @@ package edu.cca.john.jfs;
 public class Demo {
 
 	public static void main(String[] args) {
-		int a=10;
-		int b=3;
-		System.out.println("Arithmetic Operations");
-		System.out.printf("\n%-15s%-5s%-5s%-5s%-5s%-5s","Addition",a,"+",b,"=",a+b);
-		System.out.printf("\n%-15s%-5s%-5s%-5s%-5s%-5s","Subtraction",a,"-",b,"=",a-b);
-		System.out.printf("\n%-15s%-5s%-5s%-5s%-5s%-5s","Multiplication",a,"*",b,"=",a*b);
-		System.out.printf("\n%-15s%-5s%-5s%-5s%-5s%-5s","Division",a,"/",b,"=",a/b);
-		System.out.printf("\n%-15s%-5s%-5s%-5s%-5s%-5s","Modulus",a,"%",b,"=",a%b);
+		int x = 5;
+		x += 3; // x=x+3
+		x -= 2;// x=x-3
+		x *= 4;
+		x /= 5;
+		x %= 2;
+		
+		System.out.println("Assignment Operations");
+		System.out.println("Value of x is: " + x);
 	}
 }
