@@ -1,24 +1,29 @@
-//Jagged Array
+//Ascii Values
 package edu.cca.john.jfs;
 
 public class Demo {
 	public static void main(String[] args) {
 		/*
-		 *  jagged array is an array of arrays such that member arrays can be of different row sizes and column sizes
-		 *  Jagged subarrays may also be null
+        ASCII  -  American Standard Code For Information Interchange
+
+        Computers can only understand numbers,
+        so an ASCII code is the numerical representation of a character such as 'a' or '@' etc.
+
+        The first 32 characters in the ASCII-table
+        are unprintable control codes and are used to control peripherals such as printers.
+
+        Codes 32-127 are common for all the different variations of the ASCII table, they are
+        called printable characters, represent letters, digits, punctuation marks,
+        and a few miscellaneous symbols.
+
+        65-90  A-Z
+        97-122 a-z
+        48-57  0-9
+        Space  32
 		 */
-		//Jagged Array using For Loop in Java Programming
-        int a[][] = {
-                {10, 20, 30, 40},//4
-                {10, 20, 30},//3
-                {10, 20, 30,40, 50}//5
-        };
- 
-        for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < a[i].length; j++) {
-                System.out.print(" "+a[i][j]);
-            }
-            System.out.println("");
-        }
+		for(int i='a';i<='z';i++)
+	    {
+	        System.out.println(i+" "+(char)i);
+	    }
 	}
 }
