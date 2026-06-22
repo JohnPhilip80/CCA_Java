@@ -1,28 +1,30 @@
-//Even Odd Count in Array
+//Sort Numbers
 package edu.cca.john.jfs;
 
 import java.util.Scanner;
 
 public class Demo {
 	public static void main(String[] args) {
-		int e = 0, o = 0;
-        Scanner in = new Scanner(System.in);
-        System.out.println("Enter The Limit : ");
-        int n = in.nextInt();
-        int a[] = new int[n];
-        for (int i = 0; i < n; i++) {
-            System.out.println("Enter a[" + i + "] value : ");
-            a[i] = in.nextInt();
-        }
-        for (int element : a) {
-            if (element % 2 == 0) {
-                e++;
-            } else {
-                o++;
-            }
-        }
-        System.out.println("Total Even Nos : " + e);
-        System.out.println("Total Odd Nos  : " + o);
-        in.close();
+		int[] numbers = {8, 2, 9, 7, 33, 3, 87};
+		int i=0,j=0,temp=0;
+		System.out.println("Numbers before Sort:");
+		for(i=0;i<numbers.length;i++) {
+			System.out.print(numbers[i] + " ");
+		}
+		
+		for(i=0;i<numbers.length;i++) {
+			for(j=i+1;j<numbers.length; j++) {
+				if(numbers[i] > numbers[j]) {
+					temp = numbers[i];
+					numbers[i] = numbers[j];
+					numbers[j] = temp;
+				}
+			}
+		}
+		
+		System.out.println("\nNumbers after Sort:");
+		for(i=0;i<numbers.length;i++) {
+			System.out.print(numbers[i] + " ");
+		}
 	}
 }
