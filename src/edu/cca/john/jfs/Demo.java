@@ -1,165 +1,83 @@
-//Conditional Statements
+//Looping Statements
 package edu.cca.john.jfs;
 
 public class Demo {
 	public static void main(String[] args) {
 		/*
-		if Statement
-			
-			if (condition) {
-				block of code to be executed if the condition is true
+		while Statement
+			while (condition) {
+			   code block to be executed
+			}
+		*/
+		/*
+		int countdown = 10;
+		while (countdown > 0) {
+			TimeUnit.SECONDS.sleep(1);
+			System.out.println(countdown);
+			countdown--;
+		}
+		System.out.println("Happy New Year!");
+		*/
+		
+		/*
+		do while Statement
+			while (condition) {
+			  // code block to be executed
 			}
 		*/
 		
 		/*
-		int age = 20;
-		if(age >= 18) {
-			System.out.println("You are Major");
-			System.out.println("Inside the condition true block!");
-		}
-		System.out.println("Outside the condition!");
+		int i = 6;
+        do {
+            System.out.println("Number: " + i);
+            i++; // Increments the counter variable
+        } while (i <= 5);
 		*/
-		
 		
 		/*
-		if else statement
-		
-			if (condition) {
-  		 		block of code to be executed if the condition is true
-			} else {
-  		 		block of code to be executed if the condition is false
-			}
-		*/
-		
-		/*int age = 20;
-		if(age >= 18) {
-			System.out.println("You are Major");
-			System.out.println("Inside the condition true block!");
-		}
-		else {
-			System.out.println("You are Minor");
-			System.out.println("Inside the condition false block!");
-		}
-		System.out.println("Outside the condition!");
-		*/
-		
-		
-		/*	
-		else if Ladder Statement
-			if (condition1) {
-			   block of code to be executed if condition1 is true
-			} else if (condition2) {
-			   block of code to be executed if condition1 is false and condition2 is true
-			} else {
-			   block of code to be executed if both conditions are false
+		for loop Statement - 3 parts. 1. Initialization, 2. Condition, 3. Increment / Decrement
+			for (statement 1; statement 2; statement 3) {
+			   code block to be executed
 			}
 		*/
 		
 		/*
-		int score = 78; 
-
-        if (score >= 90) {
-            System.out.println("Grade: A");
-        } else if (score >= 80) {
-            System.out.println("Grade: B");
-        } else if (score >= 70) {
-            System.out.println("Grade: C");
-        } else if (score >= 60) {
-            System.out.println("Grade: D");
-        } else {
-            System.out.println("Grade: F (Fail)");
+		for (int i = 0; i < 5; i++) {
+			  System.out.println(i);
+			}
+		*/
+		
+		/*
+		//Nested Loop (Loop inside Loop)
+		// Outer loop
+		for (int i = 1; i <= 2; i++) {
+		  System.out.println("Outer: " + i); // Executes 2 times
+		  
+		  // Inner loop
+		  for (int j = 1; j <= 3; j++) {
+		    System.out.println(" Inner: " + j); // Executes 6 times (2 * 3)
+		  }
+		}
+		*/
+		/*
+		//Multiplication table
+		for (int i = 1; i <= 9; i++) {
+		  for (int j = 1; j <= 10; j++) {
+		    System.out.printf("\n%-3s%-3s%-3s%-3s%-3s", i, "*", j, " = " ,i * j);
+		  }
+		  System.out.println();
+		}
+		*/
+		
+		//break and continue
+		for (int i = 1; i <= 10; i++) {
+            if(i==5) {
+                continue;
+            }
+            System.out.println(i);
+            if(i==8){
+                break;
+            }
         }
-        */
-        
-		/*
-		Nested if statement
-			if (condition1) {
-			  code to run if condition1 is true
-			  if (condition2) {
-			  code to run if both condition1 and condition2 are true
-			  }
-			}
-		*/
-		
-		/*
-		int a = 10, b=30, c=20;
-		
-		if(a>b) {
-			if(a>c) {
-				System.out.println("A is Greater");
-			}
-			else {
-				System.out.println("C is Greater");
-			}
-		}
-		else {
-			if(b>c) {
-				System.out.println("B is Greater");
-			}
-			else {
-				System.out.println("C is Greater");
-			}
-		}
-		
-		*/
-		
-		/*
-		int a = 10, b=30, c=50;
-		if(a>=b && a>=c)
-			System.out.println("A is Greater");
-		else if(b>=a && b>=c)
-			System.out.println("B is Greater");
-		else
-			System.out.println("C is Greater");
-		*/
-		/*
-		//Nested If
-		String name = "Subashini";
-		char gender = 'F';
-		boolean isMarried = false;
-		
-		if(gender == 'F') {
-			if(isMarried) {
-				System.out.println("MRS." + name);
-			}
-			else {
-				System.out.println("Miss." + name);
-			}
-		}
-		else {
-			System.out.println("Mr." + name);
-		}
-		*/
-		
-		/*
-		switch Statement
-			switch(expression) {
-			  case x:
-			    // code block
-			    break;
-			  case y:
-			    // code block
-			    break;
-			  default:
-			    // code block
-			}
-		 */
-		
-		/*
-		int day = 6;
-		switch (day) {
-		  case 1:
-		  case 2:
-		  case 3:
-		  case 4:
-		  case 5:
-		    System.out.println("Week Day");
-		    break;
-		  case 6:
-		  case 7:
-		    System.out.println("Weekend");
-		    break;
-		}
-		*/
 	}
 }
