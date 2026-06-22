@@ -86,8 +86,6 @@ public class Mobile {
 	}
 	public void scanMobile() {
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Enter Mobile Id:");
-		this.id = scan.nextLong();scan.nextLine();
 		System.out.println("Enter Mobile Brand:");
 		this.brand = scan.nextLine();
 		System.out.println("Enter Mobile Model:");
@@ -96,5 +94,6 @@ public class Mobile {
 		this.yearLaunched = scan.nextInt();scan.nextLine();
 		System.out.println("Enter Mobile Price:");
 		this.price = scan.nextDouble();scan.nextLine();
+		scan.close();
 	}
 }
