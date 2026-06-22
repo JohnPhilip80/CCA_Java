@@ -1,26 +1,21 @@
-//2D Array
+//Jagged Array
 package edu.cca.john.jfs;
-
-import java.util.Scanner;
 
 public class Demo {
 	public static void main(String[] args) {
 		/*
-		 * 2D array is organized as matrices which can be represented as the collection of rows and column.
-		 * It is possible to define an array with more than one dimension.
-		 * multidimensional array is accessed by specifying an index for each dimension
-		 * Datatype variable_name [ ] [ ] ;
+		 *  jagged array is an array of arrays such that member arrays can be of different row sizes and column sizes
+		 *  Jagged subarrays may also be null
 		 */
-		//Two Dimension array in Java
+		//Jagged Array using For Loop in Java Programming
         int a[][] = {
-                {10, 20, 30, 9},
-                {40, 50, 60, 8},
-                {70, 80, 90, 7}
+                {10, 20, 30, 40},//4
+                {10, 20, 30},//3
+                {10, 20, 30,40, 50}//5
         };
-        a[1][2] = 100;
-        
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 4; j++) {
+ 
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a[i].length; j++) {
                 System.out.print(" "+a[i][j]);
             }
             System.out.println("");
