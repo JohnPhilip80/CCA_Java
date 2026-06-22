@@ -1,30 +1,24 @@
-//Sort Numbers
+//Swap Numbers
 package edu.cca.john.jfs;
 
 import java.util.Scanner;
 
 public class Demo {
 	public static void main(String[] args) {
-		int[] numbers = {8, 2, 9, 7, 33, 3, 87};
-		int i=0,j=0,temp=0;
-		System.out.println("Numbers before Sort:");
-		for(i=0;i<numbers.length;i++) {
-			System.out.print(numbers[i] + " ");
-		}
+		int a=8;
+		int b=3;
 		
-		for(i=0;i<numbers.length;i++) {
-			for(j=i+1;j<numbers.length; j++) {
-				if(numbers[i] > numbers[j]) {
-					temp = numbers[i];
-					numbers[i] = numbers[j];
-					numbers[j] = temp;
-				}
-			}
-		}
+		System.out.println("Before Swapping: a=" + a + ",b=" + b);
 		
-		System.out.println("\nNumbers after Sort:");
-		for(i=0;i<numbers.length;i++) {
-			System.out.print(numbers[i] + " ");
-		}
+		/*int t =0;
+		t=a;//t=8
+		a=b;//a=3
+		b=t;//b=8
+		*/
+		a=a*b;// a= 11
+		b=a/b;// b= 8
+		a=a/b;// a= 3
+		
+		System.out.println("After Swapping: a=" + a + ",b=" + b);
 	}
 }
