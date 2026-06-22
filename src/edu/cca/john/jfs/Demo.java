@@ -4,16 +4,22 @@ public class Demo {
 
 	public static void main(String[] args) {
 		/*
-		&& (Logical AND): Returns true if both conditions are true.
-		|| (Logical OR): Returns true if at least one condition is true.
-		! (Logical NOT): Reverses the boolean value
+		++ (Increment): Increases value by 1.
+		-- (Decrement): Decreases value by 1
+		Post Increment & Post Decrement
+		Pre Increment & Pre Decrement
 		*/
-		boolean eligibleForVote = true;
-		boolean haveVoterId = false;
+		int count = 10;
+		/*count++; // count is now 11 (count = count + 1 / count += 1)
+		count--; // count goes back to 10
+		System.out.println("Unary Operators");
+		System.out.println("Count = " + count);
+		*/
+		int answer = 0;
 		
-		System.out.println("Logical Operators");
-		System.out.println(eligibleForVote && haveVoterId); // false
-		System.out.println(eligibleForVote || haveVoterId); // true
-		System.out.println(!haveVoterId);           // true
+		answer = count-- + --count;
+		
+		System.out.println("Count = " + count);
+		System.out.println("Answer = " + answer);
 	}
 }
