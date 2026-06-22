@@ -9,16 +9,29 @@ public class Mobile {
 	private Integer yearLaunched;
 	private Double price;
 	
+	static Long nextId;
+	
+	static {
+		nextId = 2001L;
+	}
+	
 	public static void showHeading() {
 		System.out.printf("\n%-10s%-20s%-25s%-15s%15s\n","Id","Brand","Model","Year Launched","Price");
 	}
 	
 	public Mobile() {
-		this.id = 0L;
+		this.id = nextId; nextId++;
 		this.brand = "NA";
 		this.model = "NA";
 		this.yearLaunched=0;
 		this.price = 0.0;
+	}
+	public Mobile(String brand,String model, Integer yearLaunched, Double price) {
+		this.id = nextId; nextId++;
+		this.brand = brand;
+		this.model = model;
+		this.yearLaunched = yearLaunched;
+		this.price = price;
 	}
 	
 	public Mobile(Long id,String brand,String model, Integer yearLaunched, Double price) {
@@ -30,7 +43,7 @@ public class Mobile {
 	}
 	
 	public Mobile(Mobile mobile) {
-		this.id = mobile.id;
+		this.id = nextId; nextId++;
 		this.brand = mobile.brand;
 		this.model = mobile.model;
 		this.yearLaunched = mobile.yearLaunched;

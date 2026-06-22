@@ -1,13 +1,13 @@
-//Constructors - Default, Parameterized and Copy
+//Auto Increment
 package edu.cca.john.jfs;
 
 import edu.cca.john.jfs.model.Mobile;
 
 public class Demo {
 	public static void main(String[] args) {
-		Mobile m1 = new Mobile(2001L,"Apple","IPhone 16 Pro Max",2026,125700.00);
-		Mobile m2 = new Mobile(2002L,"Samsung","S25",2023,92800.00);
-		Mobile m3 = new Mobile(2003L,"Motorola","Edge 5",2023,15900.00);
+		Mobile m1 = new Mobile("Apple","IPhone 16 Pro Max",2026,125700.00);
+		Mobile m2 = new Mobile("Samsung","S25",2023,92800.00);
+		Mobile m3 = new Mobile("Motorola","Edge 5",2023,15900.00);
 		Mobile m4 = new Mobile();
 		Mobile m5 = new Mobile(m3);
 		
