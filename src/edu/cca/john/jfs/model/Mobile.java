@@ -12,6 +12,31 @@ public class Mobile {
 	public static void showHeading() {
 		System.out.printf("\n%-10s%-20s%-25s%-15s%15s\n","Id","Brand","Model","Year Launched","Price");
 	}
+	
+	public Mobile() {
+		this.id = 0L;
+		this.brand = "NA";
+		this.model = "NA";
+		this.yearLaunched=0;
+		this.price = 0.0;
+	}
+	
+	public Mobile(Long id,String brand,String model, Integer yearLaunched, Double price) {
+		this.id = id;
+		this.brand = brand;
+		this.model = model;
+		this.yearLaunched = yearLaunched;
+		this.price = price;
+	}
+	
+	public Mobile(Mobile mobile) {
+		this.id = mobile.id;
+		this.brand = mobile.brand;
+		this.model = mobile.model;
+		this.yearLaunched = mobile.yearLaunched;
+		this.price = mobile.price;
+	}
+	
 	public Long getId() {
 		return id;
 	}
