@@ -3,14 +3,20 @@ package edu.cca.john.jfs;
 public class Demo {
 
 	public static void main(String[] args) {
-		int x = 5;
-		x += 3; // x=x+3
-		x -= 2;// x=x-3
-		x *= 4;
-		x /= 5;
-		x %= 2;
+		/*
+		== (Equal to)
+		!= (Not equal to)
+		> (Greater than)
+		< (Less than)
+		>= (Greater than or equal to)
+		<= (Less than or equal to)
+		*/
+		int x = 10;
+		int y = 20;
 		
-		System.out.println("Assignment Operations");
-		System.out.println("Value of x is: " + x);
+		System.out.println("Relational Operators");
+		System.out.println(x == y); // false
+		System.out.println(x != y); // true
+		System.out.println(x < y);  // true
 	}
 }
