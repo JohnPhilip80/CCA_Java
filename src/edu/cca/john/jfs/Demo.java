@@ -1,34 +1,23 @@
 //CRUD Operations with ArrayList
 package edu.cca.john.jfs;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
-import edu.cca.john.jfs.service.MobileService;
+import edu.cca.john.jfs.model.Product;
 
 public class Demo {
 	public static void main(String[] args) {
-		MobileService service = new MobileService();
-		Scanner scanner = new Scanner(System.in);
-		byte choice = 0;
-		System.out.println("Welcome to Mobile CRUD Operations.");
-		do {
-			System.out.println("1.Create 2.Read All 3.Read One 4.Update 5.Delete 6.Exit. Enter your choice:");
-			choice = scanner.nextByte(); scanner.nextLine();
-			switch(choice) {
-			case 1:
-				service.createMobile();break;
-			case 2:
-				service.readMobiles();break;
-			case 3:
-				service.readMobile();break;
-			case 4:
-				service.updateMobile();break;
-			case 5:
-				service.deleteMobile();break;
-			default:
-				choice = 6;
-			}
-		}while(choice !=6);
-		System.out.println("Program Ends Here!");
+		List<Product> products = new ArrayList<Product>();
+		products.add(new Product("Lenova Laptop",42800.00));
+		products.add(new Product("Samsung Mobile",24400.00));
+		products.add(new Product("Bluetooth Mouse",2500.00));
+		products.add(new Product("Nord VPN Subscription",5800.00));
+		products.add(new Product("Antivirus Software",8200.00));
+		products.add(new Product("Windows 11 Pro",3200.00));
+		
+		Product.showHeading();
+		for(Product prod:products)
+			System.out.println(prod);
 	}
 }
