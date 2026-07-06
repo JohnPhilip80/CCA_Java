@@ -4,10 +4,11 @@ package edu.cca.john.jfs;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.cca.john.jfs.model.Product;
+import edu.cca.john.jfs.entity.Product;
 
 public class Demo {
 	public static void main(String[] args) {
+		System.out.println("Inheritance in Java!");
 		List<Product> products = new ArrayList<Product>();
 		products.add(new Product("Lenova Laptop",42800.00));
 		products.add(new Product("Samsung Mobile",24400.00));
@@ -20,4 +21,4 @@ public class Demo {
 		for(Product prod:products)
 			System.out.println(prod);
 	}
-}
+} 
