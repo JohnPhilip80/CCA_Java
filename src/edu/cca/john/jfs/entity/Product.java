@@ -10,6 +10,12 @@ public class Product {
 	public static void showHeading() {
 		System.out.printf("\n%-15s%-30s%-15s%-15s%-30s\n","Id","Name","Price","Final Price","Remarks");
 	}
+	public Product() {
+		this.id = "P" + nextId;
+		nextId++;
+		this.name = "NA";
+		this.price = 0.00;
+	}
 	public Product(String name,Double price) {
 		this.id = "P" + nextId;
 		nextId++;
