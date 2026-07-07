@@ -1,31 +1,74 @@
 //CRUD Operations with ArrayList
 package edu.cca.john.jfs;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import edu.cca.john.jfs.entity.CourseProduct;
-import edu.cca.john.jfs.entity.DigitalProduct;
-import edu.cca.john.jfs.entity.PhysicalProduct;
-import edu.cca.john.jfs.entity.Product;
+import edu.cca.john.jfs.entity.Book;
+import edu.cca.john.jfs.entity.Library;
+import edu.cca.john.jfs.entity.Member;
 
 public class Demo {
 	public static void main(String[] args) {
-		System.out.println("Abstraction & Polymorphism in Java!");
-		List<Product> products = new ArrayList<Product>();
-		products.add(new PhysicalProduct("Lenova Laptop",42800.00,2.5));
-		products.add(new PhysicalProduct("Samsung Mobile",24400.00,0.7));
-		products.add(new PhysicalProduct("Bluetooth Mouse",2500.00,0.6));
-		products.add(new DigitalProduct("Nord VPN Subscription",5800.00));
-		products.add(new DigitalProduct("Antivirus Software",8200.00));
-		products.add(new DigitalProduct("Windows 11 Pro",3200.00));
-		products.add(new CourseProduct("Java Full Stack",20000.00,9.2f));
-		products.add(new CourseProduct("Java Full Stack",20000.00,8.2f));
-		products.add(new CourseProduct("Java Full Stack",20000.00,7.8f));
-		products.add(new CourseProduct("Java Full Stack",20000.00,6.2f));
-		products.add(new CourseProduct("Java Full Stack",20000.00,5.2f));
-		Product.showHeading();
-		for(Product prod:products)
-			System.out.println(prod);
-	}
-} 
+        Library library = new Library();
+        Book book = new Book("Effective Java", 0); // no copies left
+        Member member = new Member("Arjun");
+
+        int result = library.issueBook(book, member);
+
+        // caller must remember to check the code and know what each number means
+        if (result == 1) {
+            System.out.println("Book issued: " + book.getTitle() + " to " + member.getName());
+        } else if (result == -1) {
+            System.out.println("Issue failed: Member record not found in system.");
+        } else if (result == -2) {
+            System.out.println("Issue failed: '" + book.getTitle() + "' is currently out of stock.");
+        } else if (result == -3) {
+            System.out.println("Issue failed: " + member.getName() + " has already issued the maximum allowed books.");
+        } else {
+            System.out.println("Issue failed: Unknown error.");
+        }
+
+        // cleanup/logging has to be manually placed after every possible branch
+        // (or duplicated in each branch) since there's no "finally" guarantee
+        System.out.println("Transaction log updated for member: " +
+            (member != null ? member.getName() : "UNKNOWN"));
+    }
+}
+
+/*
+The method signature lies. 
+	public int issueBook(...) looks like it just returns an int — nothing in the signature tells the caller "hey, this can fail in 3 different ways." 
+	Compare that to throws BookNotAvailableException, MemberLimitExceededException, which documents the failure modes right in the method declaration.
+Magic numbers instead of meaningful types. 
+	-1, -2, -3 mean nothing on their own. 
+	Someone reading if (result == -2) six months later has to go find the issueBook() method just to know what that means. 
+	With exceptions, catch (BookNotAvailableException e) is self-documenting.
+Nothing forces the caller to check. 
+	If a programmer calls library.issueBook(book, member); and just ignores the returned int completely, 
+	the code compiles fine and silently proceeds as if the book was issued — 
+	even though it wasn't. With checked exceptions, the compiler refuses to compile unless the caller handles or declares the exception.
+No structured cleanup. 
+	Notice the log line at the end runs regardless of outcome, but it's just sitting after the if-else chain by convention — 
+	nothing enforces it runs even if, say, an unexpected NullPointerException happened elsewhere in the method. 
+	finally in the exception-based version guarantees that.
+Doesn't scale. 
+	Right now there are 3 error types. Real systems often have 10+. 
+	Imagine this if-else chain (or the equivalent switch) with 15 branches, 
+	and every single caller of issueBook() needing to repeat that same chain to interpret the code correctly.
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
