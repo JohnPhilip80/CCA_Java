@@ -2,22 +2,11 @@ package edu.cca.john.jfs.entity;
 
 public class PhysicalProduct extends Product {
 	private Double weight;
-	private Float shippingCostPerKG;
-	public PhysicalProduct() {
-		super();
-		this.weight = 0.00;
-		this.shippingCostPerKG = 0.00F;
-	}
+	private static final Float shippingCostPerKG = 80.00f;
+	
 	public PhysicalProduct(String name, Double price, Double weight) {
 		super(name, price);
 		this.weight = weight;
-		this.shippingCostPerKG = 650.00F;
-	}
-	public Double calculateFinalPrice() {
-		return this.price + (this.weight * this.shippingCostPerKG);
-	}
-	public String priceRemark() {
-		return "Shipping Charge (Extra) - " + String.format("%-10.2f",(this.weight * this.shippingCostPerKG));
 	}
 	public Double getWeight() {
 		return weight;
@@ -25,11 +14,10 @@ public class PhysicalProduct extends Product {
 	public void setWeight(Double weight) {
 		this.weight = weight;
 	}
-	public Float getShippingCostPerKG() {
-		return shippingCostPerKG;
+	public Double calculateFinalPrice() {
+		return this.price + (this.weight * shippingCostPerKG);
 	}
-	public void setShippingCostPerKG(Float shippingCostPerKG) {
-		this.shippingCostPerKG = shippingCostPerKG;
+	public String priceRemark() {
+		return "Shipping Charge (Extra) - " + String.format("%-10.2f",(this.weight * shippingCostPerKG));
 	}
-	
 }

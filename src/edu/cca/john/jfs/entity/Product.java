@@ -1,6 +1,6 @@
 package edu.cca.john.jfs.entity;
 
-public class Product {
+public abstract class Product {
 	protected String id;
 	protected String name;
 	protected Double price;
@@ -9,12 +9,6 @@ public class Product {
 	
 	public static void showHeading() {
 		System.out.printf("\n%-15s%-30s%-15s%-15s%-30s\n","Id","Name","Price","Final Price","Remarks");
-	}
-	public Product() {
-		this.id = "P" + nextId;
-		nextId++;
-		this.name = "NA";
-		this.price = 0.00;
 	}
 	public Product(String name,Double price) {
 		this.id = "P" + nextId;
@@ -46,12 +40,8 @@ public class Product {
 	public static void setNextId(Integer nextId) {
 		Product.nextId = nextId;
 	}
-	public Double calculateFinalPrice() {
-		return this.price - 400;
-	}
-	public String priceRemark() {
-		return "Flat 400 Rupees Off!";
-	}
+	public abstract Double calculateFinalPrice();
+	public abstract String priceRemark();
 	@Override
 	public String toString() {
 		return String.format("%-15s%-30s%-15.2f%-15.2f%-30s",
