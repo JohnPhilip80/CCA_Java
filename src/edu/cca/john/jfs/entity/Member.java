@@ -5,7 +5,10 @@ public class Member {
     private int booksIssued;
     
     static final int MAX_BOOKS_ALLOWED = 3;
-
+    
+    public Member() {
+    	
+    }
     public Member(String name) {
         this.name = name;
     }
