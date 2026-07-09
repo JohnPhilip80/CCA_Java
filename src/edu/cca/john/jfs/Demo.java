@@ -1,21 +1,20 @@
 package edu.cca.john.jfs;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.File;
+import java.util.Scanner;
 
 public class Demo {
 	public static void main(String[] args) {
-		 try {
-	            FileWriter writer = new FileWriter("student.txt");
-	            writer.write("101,John,Java\n");
-	            writer.write("102,Saraswathy,Python\n");
-	            writer.write("103,Sumaya,Data Science\n");
-	            writer.write("104,Bala,Cyber Security");
-	            writer.close();
-	            System.out.println("Data Written");
-	        }
-	        catch(IOException e){
-	            System.out.println(e.getMessage());
-	        }
+		try {
+            File file = new File("student.txt");
+            Scanner sc = new Scanner(file);
+            while(sc.hasNextLine()){
+                System.out.println(sc.nextLine());
+            }
+            sc.close();
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 }
