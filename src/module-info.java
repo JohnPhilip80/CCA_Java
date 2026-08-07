@@ -4,5 +4,5 @@
 /**
  * 
  */
-module ClassRelationship {
+module Java8Features {
 }

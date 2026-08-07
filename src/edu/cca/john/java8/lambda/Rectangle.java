@@ -1,0 +1,10 @@
+package edu.cca.john.java8.lambda;
+
+public class Rectangle implements Shape {
+
+	@Override
+	public void draw() {
+		System.out.println("Rectangle class : draw() method");
+	}
+
+}
