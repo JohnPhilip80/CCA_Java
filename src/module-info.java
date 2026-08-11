@@ -4,5 +4,5 @@
 /**
  * 
  */
-module Java8Features {
+module JavaStream {
 }
