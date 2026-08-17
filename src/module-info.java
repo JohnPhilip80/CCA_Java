@@ -4,5 +4,5 @@
 /**
  * 
  */
-module ThreadCommunication {
+module Deadlock {
 }
